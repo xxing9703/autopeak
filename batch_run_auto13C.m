@@ -40,7 +40,7 @@ for n=1:length(sheetNames) %--------------loop over each sheet
             continue;
         end    
      try
-      files=dir(T(i).fileLocation); 
+      files=dir(T(i).folder); 
       files=filefiter(files,T(i).inclusion,T(i).exclusion);
       autopeak13C(pks,files,settings,fn_out);
      catch ME
