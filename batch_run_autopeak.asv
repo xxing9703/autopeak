@@ -8,10 +8,15 @@ if nargin<1
         return;
     end
     job=fullfile(path,fname);
+    fout=path;
+    O=load('source\settings.mat');
+    settings=O.settings;
 else
-fout='jobs\';
+fout='jobs';
 end
 [~,fd,~]=fileparts(job);  %
+job_outdir = fullfile(fout, fd);
+if ~exist(job_outdir, 'dir')
 mkdir([fout,fd]);
 sheetNames = sheetnames(job);
 
