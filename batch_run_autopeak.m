@@ -9,7 +9,7 @@ if nargin<1
     end
     job=fullfile(path,fname);
     fout=path;
-    O=load('source\settings.mat');
+    O=load('source\settings.mat'); %default settings
     settings=O.settings;
 else
 fout='jobs';
@@ -49,6 +49,13 @@ for n=1:length(sheetNames) %--------------loop over each sheet
             
         writetable([T0,T1],fn_out,'Sheet','intens');
         writetable([T0,T2],fn_out,'Sheet','rt');
+         para=[];
+         para(1).name='ppm';para(1).value=settings.ppm*1e6;
+         para(2).name='rt tolerance (min)';para(4).value=settings.rtm;
+         para(3).name='EIC moving average';para(3).value=settings.ave;
+         
+        writetable(struct2table(para),fn_out,'Sheet','_info','UseExcel', true);
+
      catch ME
          %writematrix([1,1;0,0],fn_out);  %-----error message
          disp(ME.message)
