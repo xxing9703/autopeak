@@ -3,7 +3,7 @@ function batch_run_auto(job,settings)
 % create a output folder for the job, using the job name
 addpath('source');
 if nargin<1
-    [fname,path]=uigetfile('*.xlsx');
+    [fname,path]=uigetfile('*.xlsx; .csv');
     if fname==0
         return;
     end
