@@ -9,7 +9,7 @@ if nargin<1
     end
     job=fullfile(path,fname);
     fout=path;
-    O=load('source\settings13C15.mat'); %default settings
+    O=load('source\settings13C15N.mat'); %default settings
     settings=O.settings;
 else
 fout='jobs13C15N';
