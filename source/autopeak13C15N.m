@@ -1,6 +1,6 @@
 % this version inputs predefined files, processing multiple folders all at
 % once
-function [ISO,T]=autopeak13C(pks,files,settings,fn_out)
+function [ISO,T]=autopeak13C15N(pks,files,settings,fn_out)
 if settings.mode == -1
     mode='neg';
 else
@@ -25,7 +25,7 @@ for i=1:length(files)
     T(i).tissue_str='';
     T(i).tracer='';
     T(i).tracer_str='';
-    T(i).tracer_atom='13C'; %---------------------------------------------
+    T(i).tracer_atom='13C15N'; %---------------------------------------------
     T(i).ctrl='';
 end
 
@@ -45,10 +45,12 @@ parfor i=1:length(fn)
           [~,~,ct]=formula2mass(pks(j).formula);
           Cnum=max(ct(1),1);
           Cnum=min(Cnum,30);
+          Nnum=3;
        catch
           Cnum=min(round(pks(j).mz/25),30);  %Cnum estimate, upper bound is 30 
-       end       
-       tp=get_eic_isodata0(M,pks(j), settings, '13C', Cnum); 
+          Nnum=3;
+       end          
+       tp=get_eic_isodata2(M,pks(j), settings, 'C13N15', [Cnum,Nnum]); 
        tp=rmfield(tp,'eic'); 
        iso{j}=tp;
     end 
