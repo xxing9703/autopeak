@@ -86,11 +86,3 @@ batch_run_auto
 * A **UI folder selector** will pop up
 * Select the directory containing your job file(s)
 * AutoPeak will automatically detect and process the job file(s)
-
-##  Contact
-
-For questions, suggestions, or bug reports, please open an issue in the repository.
-
----
-
-If you want, I can also add a short **“expected output format” section** (very useful for users) or a **quick troubleshooting guide**.
