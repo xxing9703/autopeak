@@ -31,7 +31,7 @@ AutoPeak provides three modes of operation:
 ##  Input: Job Template
 
 AutoPeak requires a job template file (`.xlsx`) with the following columns:
-In addition, parameter settings are 
+In addition, parameter settings are need.  There's a default saved in the source, can be modified.
 
 | Column Name    | Description                                                                                   |
 | -------------- | --------------------------------------------------------------------------------------------- |
