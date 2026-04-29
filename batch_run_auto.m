@@ -1,5 +1,5 @@
 %  batch process all 13C tracing data 
-function batch_run_autopeak(job,settings)
+function batch_run_auto(job,settings)
 % create a output folder for the job, using the job name
 addpath('source');
 if nargin<1
