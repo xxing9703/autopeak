@@ -1,7 +1,7 @@
 % This is a different version of peak detection from eic,  using peak
 % finder instead of pick the highest signal
 function [sig,rt_dev,rt_fix,eic_sub,npts]=EIC2sig_v1(eic,rt,rt_tol,avg)
-npts=[0,0];sig=0;rt_fix=rt;rt_dev=0;eic_sub=[];
+npts=0;sig=0;rt_fix=rt;rt_dev=0;eic_sub=eic;
 ind=find(abs(eic(:,1)-rt)<rt_tol); % find the index range for the subset of eic
 if length(ind)>5 % eic_sub must contain at least 5 data points
  eic_sub=eic(ind,:); % a subset of eic within RT window
@@ -40,8 +40,8 @@ if length(ind)>5 % eic_sub must contain at least 5 data points
         right_idx = right_idx + 1;
     end
     % number of continuous non-zero points around peak
-    npts(1) = right_idx - left_idx + 1;
-    npts(2) = nnz(y);
+    npts = right_idx - left_idx + 1;
+    
     %----------------------end insert
 
  end
