@@ -11,7 +11,7 @@ if length(ind)>5 % eic_sub must contain at least 5 data points
      'MinPeakWidth',0.1);    %peakwidth
  if isempty(peak_sig)
     sig=0;
-    rt_fix=nan;
+    rt_fix=rt;
     rt_dev=nan;
     npts=0;
  else
