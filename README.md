@@ -1,10 +1,14 @@
 # AutoPeak
 
-AutoPeak is a MATLAB-based tool designed for automated extraction of MS1 peak intensities from LC–MS datasets and a provided targeted peaklist. It also supports isotopologue extraction.
+AutoPeak is a MATLAB-based tool designed for automated extraction of MS1 peak intensities from LC–MS datasets and a provided targeted peaklist. It also supports isotopologue extraction. The code was written and tested in Matlab 2025b (Note: matlab 2026a might have compatability issues with updates in bioinfomatics toolbox, versions earlier are probably OK but not tested). toolboxes required:
+* Bioinformatics
+* Curve Fitting
+* Signal Processing
+* Statistics and Machine Learning
 
 ##  Versions
 
-AutoPeak provides three modes of operation:
+AutoPeak provides four modes of operation:
 
 ### **A. Unlabeled Mode**
 
@@ -24,7 +28,14 @@ AutoPeak provides three modes of operation:
 * Extracts intensities for both 13C and 15N isotopologues
 * use "batch_run_auto13C15N.m"
 * suitable for 15N-contained tracers
-* Dual-tracer Natural isotope abundance correction included. 
+* Dual-tracer Natural isotope abundance correction included.
+
+### **D. 2D Labeling Mode**
+
+* Extracts intensities for 2D
+* use "batch_run_auto2D.m"
+* suitable for 2D-contained tracers
+* Having peaks with known formulas included in the peak list is strongly recommended. 
 
 ---
 
