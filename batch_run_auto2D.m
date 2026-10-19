@@ -1,4 +1,4 @@
-%  batch process all 13C tracing data
+%  batch process all 2D tracing data
 function batch_run_auto2D(job,settings)
 % create a output folder for the job, using the job name
 addpath('source');
