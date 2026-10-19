@@ -43,7 +43,7 @@ parfor i=1:length(fn)
         fprintf([num2str(i),'-',num2str(j),'\n'])
        try
           [~,~,ct]=formula2mass(pks(j).formula);
-          Dnum=max(ct(1),1);
+          Dnum=max(ct(3),1);
           Dnum=min(Dnum,60);
        catch
           Dnum=10; %Dnum default =10 if no formula provided 
